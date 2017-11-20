@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		},
+		{
+			"path": "src"
+		},
+		{
+			"path": "src\\js"
+		},
+		{
+			"path": "src\\js\\components"
+		}
+	]
+}
