@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import RaisedButton from 'material-ui/RaisedButton';
+
 import { getTodos } from 'js/api';
+
+import './ActionPanel.css';
 
 
 class ActionPanel extends Component {
@@ -14,8 +18,8 @@ class ActionPanel extends Component {
   render() {
     return (
       <div className='ActionPanel'>
-        <button onClick = { this.reloadItems }>Reload</button>
-        <button onClick= { this.showAddTodoForm }>Add</button>
+        <RaisedButton primary label='Reload' onClick = { this.reloadItems } />
+        <RaisedButton primary label='Add' onClick = { this.showAddTodoForm } />
       </div>
     );
   }

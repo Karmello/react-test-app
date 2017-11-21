@@ -11,6 +11,9 @@
 			"path": "src\\js"
 		},
 		{
+			"path": "src\\js\\containers"
+		},
+		{
 			"path": "src\\js\\components"
 		}
 	]

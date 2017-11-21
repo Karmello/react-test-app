@@ -8,7 +8,9 @@ import './App.css';
 export default class App extends Component {
   render() {
     return (
-      <Todos></Todos>
+      <div className='App'>
+        <Todos></Todos>
+      </div>
     );
   }
 }
