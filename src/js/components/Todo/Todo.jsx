@@ -13,15 +13,15 @@ class Todo extends Component {
 
   constructor(props, context) {
     super(props, context);
-    this.todosIns = context.todosIns;  
+    this.todosIns = context.todosIns;
   }
 
   render() {
     return (
       <div className='Todo'>
-        { this.props.number + ') ' + this.props.item.description }
+        { this.props.number + ') ' + this.props.data.description }
         <div>
-          <button onClick = { this.onStatusChange }>{ labels[this.props.item.status] }</button>
+          <button onClick = { this.onStatusChange }>{ labels[this.props.data.status] }</button>
           <button onClick = { this.onRemove }>Remove</button>
         </div>
       </div>
@@ -42,8 +42,8 @@ class Todo extends Component {
     this.todosIns.setState({ isLoading: true });
 
     const newTodo = {
-      ...this.props.item,
-      status: Number(!Boolean(this.props.item.status))
+      ...this.props.data,
+      status: Number(!Boolean(this.props.data.status))
     };
 
     this.props.dispatch(editTodo(this.props.number - 1, newTodo)).then(() => {

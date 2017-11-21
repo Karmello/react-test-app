@@ -1,5 +1,7 @@
-const delay = 500;
+import { GET_TODOS, ADD_TODO, EDIT_TODO, REMOVE_TODO } from 'js/actions';
 
+
+const delay = 500;
 
 const todos = [
   { description: 'Go shopping', status: 0 },
@@ -7,11 +9,13 @@ const todos = [
   { description: 'Call my family', status: 0 }
 ];
 
+
 export const getTodos = () => {
   return (dispatch) => {
     return new Promise((resolve) => {
+      
       setTimeout(() => {
-        dispatch({ type: 'GET_TODOS', data: todos });
+        dispatch(GET_TODOS(todos));
         resolve();
       }, delay);
     });
@@ -21,9 +25,11 @@ export const getTodos = () => {
 export const addTodo = (todo) => {
   return (dispatch) => {
     return new Promise((resolve) => {
+      
       todos.push(todo);
+      
       setTimeout(() => {
-        dispatch({ type: 'ADD_TODO', data: todo });
+        dispatch(ADD_TODO(todo));
         resolve();
       }, delay);
     });
@@ -33,9 +39,11 @@ export const addTodo = (todo) => {
 export const editTodo = (index, todo) => {
   return (dispatch) => {
     return new Promise((resolve) => {
+      
       todos[index] = todo;
+      
       setTimeout(() => {
-        dispatch({ type: 'EDIT_TODO', index: index, data: todo });
+        dispatch(EDIT_TODO(index, todo));
         resolve();
       }, delay);
     });
@@ -45,9 +53,11 @@ export const editTodo = (index, todo) => {
 export const removeTodo = (index) => {
   return (dispatch) => {
     return new Promise((resolve) => {
+      
       todos.splice(index, 1);
+      
       setTimeout(() => {
-        dispatch({ type: 'REMOVE_TODO', index: index });
+        dispatch(REMOVE_TODO(index));
         resolve();
       }, delay);
     });

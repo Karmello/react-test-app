@@ -1,26 +1,28 @@
-const todosReducer = (state = [], action) => {
+const todosReducer = (prevTodos = [], action) => {
   
   switch (action.type) {
     
     case 'GET_TODOS':
-      return [...action.data];
+      return [...action.data.todos];
 
     case 'ADD_TODO':
-       return [...state, action.data];
+       return [...prevTodos, action.data.todo];
 
     case 'EDIT_TODO':
-      const todos = [...state];
-      todos[action.index] = action.data;
-      return todos;
+      return [
+         ...prevTodos.slice(0, action.data.index),
+         action.data.todo,
+         ...prevTodos.slice(action.data.index + 1)
+      ];
 
     case 'REMOVE_TODO':
       return [
-         ...state.slice(0, action.index),
-         ...state.slice(action.index + 1)
+         ...prevTodos.slice(0, action.data.index),
+         ...prevTodos.slice(action.data.index + 1)
       ];
 
     default:
-      return state;
+      return prevTodos;
   }
 }
 

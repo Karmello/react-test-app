@@ -53,7 +53,7 @@ class Todos extends Component {
         <Todo
           key = {content.length + 1}
           number = {content.length + 1}
-          item = {todo}
+          data = {todo}
         />
       );
     }
