@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { hardCodedItems, getItems } from 'js/api';
 import Todo from 'js/components/Todo/Todo';
-import TodoActionPanel from 'js/components/TodoActionPanel/TodoActionPanel';
+import ActionPanel from 'js/components/ActionPanel/ActionPanel';
 import AddTodoForm from 'js/components/AddTodoForm/AddTodoForm';
 import './Todos.css';
 
@@ -36,7 +36,7 @@ class Todos extends Component {
           <div>
             <div className='Todos-content'>{ this.renderItems(<Todo/>) }</div>
             <br />
-            <TodoActionPanel todos = {this} initialState = {initialState} />
+            <ActionPanel todos = {this} initialState = {initialState} />
             { this.state.showAddTodoForm && <AddTodoForm todos = {this} /> }
           </div>
         }

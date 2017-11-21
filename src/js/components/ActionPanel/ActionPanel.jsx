@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { getItems } from 'js/api';
 
 
-export default class TodoActionPanel extends Component {
+export default class ActionPanel extends Component {
 
   render() {
     return (
-      <div className='TodoActionPanel'>
+      <div className='ActionPanel'>
         <button onClick = { this.reloadItems }>Reload</button>
         <button onClick= { this.showAddTodoForm }>Add</button>
       </div>
