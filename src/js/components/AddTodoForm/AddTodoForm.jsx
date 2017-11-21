@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
-import { postItem } from 'js/api';
+import PropTypes from 'prop-types';
+
+import { addTodo } from 'js/api';
+
 import './AddTodoForm.css';
 
 
 class AddTodoForm extends Component {
+
+  constructor(props, context) {
+    super(props, context);
+    this.todosIns = context.todosIns;
+  }
 
   render() {
     return (
@@ -27,22 +36,25 @@ class AddTodoForm extends Component {
   }
 
   onSubmit = (values) => {
-    const todos = this.props.todos;
-    todos.setState({ isLoading: true, showAddTodoForm: false });
-    postItem({ ...values, status: 0 }, (data) => {
-      todos.setState((prevState) => {
-        return {
-          isLoading: false,
-          showAddTodoForm: false,
-          ...prevState.items.push(data)
-        }
-      });
+    
+    this.todosIns.setState({ isLoading: true });
+    
+    this.props.dispatch(addTodo({ ...values, status: 0 })).then(() => {
+      this.todosIns.setState({ isLoading: false, showAddTodoForm: false });
     });
   };
 
   onCancel = () => {
-    this.props.todos.setState({ showAddTodoForm: false });
+    this.todosIns.setState({ showAddTodoForm: false });
   };
 };
+
+AddTodoForm.contextTypes = {
+  todosIns: PropTypes.object
+};
+
+const mapStateToProps = (state) => { return state; };
+
+AddTodoForm = connect(mapStateToProps)(AddTodoForm);
 
 export default reduxForm({ form: 'AddTodoForm' })(AddTodoForm);

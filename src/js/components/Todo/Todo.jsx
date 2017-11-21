@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
-import { deleteItem } from 'js/api';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+import { editTodo, removeTodo } from 'js/api';
+
 import './Todo.css';
 
 
-const labels = ['Mark as done', 'Mark as not done']
+const labels = ['Mark as done', 'Mark as not done'];
 
-export default class Todo extends Component {
+class Todo extends Component {
+
+  constructor(props, context) {
+    super(props, context);
+    this.todosIns = context.todosIns;  
+  }
 
   render() {
     return (
@@ -21,33 +30,32 @@ export default class Todo extends Component {
 
   onRemove = () => {
 
-    const todos = this.props.todos;
-    const index = this.props.number - 1;
-
-    todos.setState({ isLoading: true, showAddTodoForm: false });
+    this.todosIns.setState({ isLoading: true });
     
-    deleteItem(index, (success) => {
-      if (success) {
-        todos.setState({
-          items: [
-             ...todos.state.items.slice(0, index),
-             ...todos.state.items.slice(index + 1)
-          ],
-          isLoading: false
-        });
-
-      }
+    this.props.dispatch(removeTodo(this.props.number - 1)).then(() => {
+      this.todosIns.setState({ isLoading: false, showAddTodoForm: false });
     });
   };
 
   onStatusChange = () => {
 
-    const todos = this.props.todos;
-    const index = this.props.number - 1;
+    this.todosIns.setState({ isLoading: true });
 
-    todos.setState((prevState) => {
-      prevState.items[index].status = Number(!prevState.items[index].status);
-      return { ...prevState }
+    const newTodo = {
+      ...this.props.item,
+      status: Number(!Boolean(this.props.item.status))
+    };
+
+    this.props.dispatch(editTodo(this.props.number - 1, newTodo)).then(() => {
+      this.todosIns.setState({ isLoading: false });
     });
   };
 };
+
+Todo.contextTypes = {
+  todosIns: PropTypes.object
+};
+
+const mapStateToProps = (state) => { return state; }
+
+export default connect(mapStateToProps)(Todo);

@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
-import { getItems } from 'js/api';
+import PropTypes from 'prop-types';
+
+import { getTodos } from 'js/api';
 
 
-export default class ActionPanel extends Component {
+class ActionPanel extends Component {
+
+  constructor(props, context) {
+    super(props, context);
+    this.todosIns = context.todosIns;
+  }
 
   render() {
     return (
@@ -14,14 +21,19 @@ export default class ActionPanel extends Component {
   }
 
   reloadItems = () => {
-    const todos = this.props.todos;
-    todos.setState(this.props.initialState);
-    getItems(todos.state.items, (data) => {
-      todos.setState({ items: data, isLoading: false });
+    this.todosIns.setState({ isLoading: true });
+    this.todosIns.props.dispatch(getTodos()).then(() => {
+      this.todosIns.setState({ isLoading: false });
     });
   };
 
   showAddTodoForm = () => {
-    this.props.todos.setState({ showAddTodoForm: true });
+    this.todosIns.setState({ showAddTodoForm: true });
   }
 };
+
+ActionPanel.contextTypes = {
+  todosIns: PropTypes.object
+};
+
+export default ActionPanel;
