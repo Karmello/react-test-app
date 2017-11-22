@@ -1,7 +1,7 @@
 import { GET_TODOS, ADD_TODO, EDIT_TODO, REMOVE_TODO } from 'js/actions';
 
 
-const delay = 500;
+const delay = 250;
 
 const todos = [
   { description: 'Go shopping', status: 0 },

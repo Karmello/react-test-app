@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import RaisedButton from 'material-ui/RaisedButton';
-
-import { getTodos } from 'js/api';
+import Button from 'material-ui/Button';
 
 import './ActionPanel.css';
 
@@ -18,21 +16,15 @@ class ActionPanel extends Component {
   render() {
     return (
       <div className='ActionPanel'>
-        <RaisedButton primary label='Reload' onClick = { this.reloadItems } />
-        <RaisedButton primary label='Add' onClick = { this.showAddTodoForm } />
+        <Button raised color='primary' onClick = { this.showAddTodoForm }>Add</Button>
       </div>
     );
   }
 
-  reloadItems = () => {
-    this.todosIns.setState({ isLoading: true });
-    this.todosIns.props.dispatch(getTodos()).then(() => {
-      this.todosIns.setState({ isLoading: false });
-    });
-  };
-
   showAddTodoForm = () => {
-    this.todosIns.setState({ showAddTodoForm: true });
+    if (!this.todosIns.state.isLoading) {
+      this.todosIns.setState({ showAddTodoForm: true });
+    }
   }
 };
 

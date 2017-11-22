@@ -4,10 +4,14 @@ import PropTypes from 'prop-types';
 
 import { editTodo, removeTodo } from 'js/api';
 
+import { ListItem, ListItemIcon, ListItemText, ListItemSecondaryAction } from 'material-ui/List';
+import Checkbox from 'material-ui/Checkbox';
+import IconButton from 'material-ui/IconButton';
+import DeleteIcon from 'material-ui-icons/Delete';
+import Chip from 'material-ui/Chip';
+
 import './Todo.css';
 
-
-const labels = ['Mark as done', 'Mark as not done'];
 
 class Todo extends Component {
 
@@ -19,11 +23,22 @@ class Todo extends Component {
   render() {
     return (
       <div className='Todo'>
-        { this.props.number + ') ' + this.props.data.description }
-        <div>
-          <button onClick = { this.onStatusChange }>{ labels[this.props.data.status] }</button>
-          <button onClick = { this.onRemove }>Remove</button>
-        </div>
+        <ListItem button>
+          <ListItemIcon>
+            <Chip label = {this.props.index + 1} />
+          </ListItemIcon>
+          <ListItemText primary = { this.props.data.description } />
+          <ListItemSecondaryAction>
+            <IconButton onClick = { this.onRemove }><DeleteIcon /></IconButton>
+            <IconButton onClick = { this.onStatusChange }>
+              <Checkbox
+                checked={this.props.data.status === 1}
+                tabIndex={-1}
+                disableRipple
+              />
+            </IconButton>
+          </ListItemSecondaryAction>
+        </ListItem>
       </div>
     );
   }
@@ -32,7 +47,7 @@ class Todo extends Component {
 
     this.todosIns.setState({ isLoading: true });
     
-    this.props.dispatch(removeTodo(this.props.number - 1)).then(() => {
+    this.props.dispatch(removeTodo(this.props.index)).then(() => {
       this.todosIns.setState({ isLoading: false, showAddTodoForm: false });
     });
   };
@@ -46,7 +61,7 @@ class Todo extends Component {
       status: Number(!Boolean(this.props.data.status))
     };
 
-    this.props.dispatch(editTodo(this.props.number - 1, newTodo)).then(() => {
+    this.props.dispatch(editTodo(this.props.index, newTodo)).then(() => {
       this.todosIns.setState({ isLoading: false });
     });
   };
