@@ -4,9 +4,13 @@ import { GET_TODOS, ADD_TODO, EDIT_TODO, REMOVE_TODO } from 'js/actions';
 const delay = 250;
 
 const todos = [
-  { description: 'Go shopping', status: 0 },
-  { description: 'Clean my room', status: 0 },
-  { description: 'Call my family', status: 0 }
+  { description: 'Wake up', status: 1 },
+  { description: 'Have breakfast', status: 1 },
+  { description: 'Go to work', status: 1 },
+  { description: 'Have lunch', status: 0 },
+  { description: 'Go home', status: 0 },
+  { description: 'Watch some movie', status: 0 },
+  { description: 'Go to sleep', status: 0 }
 ];
 
 

@@ -1,35 +1,37 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import Button from 'material-ui/Button';
 
+import { SHOW_DIALOG } from 'js/actions';
 import './ActionPanel.css';
 
 
 class ActionPanel extends Component {
 
-  constructor(props, context) {
-    super(props, context);
-    this.todosIns = context.todosIns;
-  }
-
   render() {
-    return (
-      <div className='ActionPanel'>
-        <Button raised color='primary' onClick = { this.showAddTodoForm }>Add</Button>
-      </div>
-    );
-  }
 
-  showAddTodoForm = () => {
-    if (!this.todosIns.state.isLoading) {
-      this.todosIns.setState({ showAddTodoForm: true });
+    const { isTodoListLoading } = this.props;
+
+    if (!isTodoListLoading) {
+      return (
+        <div className='ActionPanel'>
+          <Button
+            raised
+            color='primary'
+            onClick = { () => { this.props.dispatch(SHOW_DIALOG('AddTodoDialog')) } }
+          >Add</Button>
+        </div>
+      );
     }
+    return null;
   }
 };
 
-ActionPanel.contextTypes = {
-  todosIns: PropTypes.object
-};
+const mapStateToProps = (state) => {
+  return {
+    isTodoListLoading: state.loader.TodoList.isLoading,
+  };
+}
 
-export default ActionPanel;
+export default connect(mapStateToProps)(ActionPanel);

@@ -1,56 +1,50 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
-import PropTypes from 'prop-types';
+
+import Button from 'material-ui/Button';
 
 import { addTodo } from 'js/api';
-
+import { HIDE_DIALOG, START_LOADER, STOP_LOADER } from 'js/actions';
 import './AddTodoForm.css';
 
 
 class AddTodoForm extends Component {
 
-  constructor(props, context) {
-    super(props, context);
-    this.todosIns = context.todosIns;
-  }
-
   render() {
+
+    const { handleSubmit } = this.props;
+
     return (
-      <div className='AddTodoForm'>
-        <form onSubmit = { this.props.handleSubmit(this.onSubmit) }>
-          <div>
-            <label>Description</label>
-            <div>
-              <Field name='description' component='textarea' type='text' />
-            </div>
-          </div>
-          <br />
-          <div>
-            <button type='button' onClick = { this.onCancel }>Cancel</button>
-            <button type='submit'>Submit</button>
-          </div>
-        </form>
-      </div>
+      <form onSubmit = { handleSubmit(this.onSubmit) }>
+        <div>
+          <Field
+            className='AddTodoForm-description'
+            component='textarea'
+            name='description'
+            placeholder='Description'
+          />
+        </div>
+        <br />
+        <div className='AddTodoForm-btnsContainer'>
+          <Button raised color='default' type='button' onClick = { this.onCancel }>Cancel</Button>
+          <Button raised color='primary' type='submit'>Submit</Button>
+        </div>
+      </form>
     );
   }
 
   onSubmit = (values) => {
-    
-    this.todosIns.setState({ isLoading: true });
-    
+    this.props.dispatch(HIDE_DIALOG('AddTodoDialog'));
+    this.props.dispatch(START_LOADER('TodoList'));
     this.props.dispatch(addTodo({ ...values, status: 0 })).then(() => {
-      this.todosIns.setState({ isLoading: false, showAddTodoForm: false });
+      this.props.dispatch(STOP_LOADER('TodoList'));
     });
   };
 
   onCancel = () => {
-    this.todosIns.setState({ showAddTodoForm: false });
+    this.props.dispatch(HIDE_DIALOG('AddTodoDialog'));
   };
-};
-
-AddTodoForm.contextTypes = {
-  todosIns: PropTypes.object
 };
 
 const mapStateToProps = (state) => { return state; };

@@ -1,4 +1,4 @@
-const todosReducer = (prevTodos = [], action) => {
+const todoReducer = (prevTodos = [], action) => {
   
   switch (action.type) {
     
@@ -26,4 +26,4 @@ const todosReducer = (prevTodos = [], action) => {
   }
 }
 
-export default todosReducer;
+export default todoReducer;

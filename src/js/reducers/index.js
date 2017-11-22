@@ -1,11 +1,16 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 
-import todosReducer from './todosReducer';
+import loaderReducer from './loaderReducer';
+import dialogReducer from './dialogReducer';
+import todoReducer from './todoReducer';
+
 
 const reducers = combineReducers({
+  loader: loaderReducer,
   form: formReducer,
-  todos: todosReducer
+  dialog: dialogReducer,
+  todos: todoReducer
 });
 
 export default reducers;

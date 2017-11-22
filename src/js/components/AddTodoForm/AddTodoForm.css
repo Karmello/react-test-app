@@ -1,2 +1,7 @@
-.AddTodoForm {
-  margin: 25px; }
+.AddTodoForm-description {
+  width: 400px;
+  max-width: 100%;
+  height: 50px; }
+
+.AddTodoForm-btnsContainer {
+  text-align: right; }
