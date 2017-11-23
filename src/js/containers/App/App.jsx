@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { getTodos } from 'js/api';
-import { STOP_LOADER } from 'js/actions';
+import { HIDE } from 'js/actions';
 import { TopBar, TodoList, ActionPanel, AddTodoDialog } from 'js/components';
 import './App.css';
 
@@ -11,13 +11,13 @@ class App extends Component {
 
   componentDidMount() {
     this.props.dispatch(getTodos()).then(() => {
-      this.props.dispatch(STOP_LOADER('TodoList'));
+      this.props.dispatch(HIDE('TodoListLoader'));
     });
   }
 
   render() {
 
-    const { showAddTodoDialog } = this.props;
+    const { isAddToDoDialogShown } = this.props;
 
     return (
       <div className='App'>
@@ -26,7 +26,7 @@ class App extends Component {
         <TodoList/>
         <br/>
         <ActionPanel/>
-        <AddTodoDialog open = {showAddTodoDialog} />
+        <AddTodoDialog isShown = {isAddToDoDialogShown} />
       </div>
     );
   }
@@ -34,7 +34,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    showAddTodoDialog: state.dialog.AddTodoDialog.visible
+    isAddToDoDialogShown: state.visibility.AddTodoDialog
   }
 }
 

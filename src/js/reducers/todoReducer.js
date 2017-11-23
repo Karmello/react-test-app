@@ -1,28 +1,28 @@
-const todoReducer = (prevTodos = [], action) => {
+const todoReducer = (state = [], action) => {
   
   switch (action.type) {
     
     case 'GET_TODOS':
-      return [...action.data.todos];
+      return [...action.payload];
 
     case 'ADD_TODO':
-       return [...prevTodos, action.data.todo];
+       return [...state, action.payload];
 
     case 'EDIT_TODO':
       return [
-         ...prevTodos.slice(0, action.data.index),
-         action.data.todo,
-         ...prevTodos.slice(action.data.index + 1)
+         ...state.slice(0, action.meta.index),
+         action.payload,
+         ...state.slice(action.meta.index + 1)
       ];
 
     case 'REMOVE_TODO':
       return [
-         ...prevTodos.slice(0, action.data.index),
-         ...prevTodos.slice(action.data.index + 1)
+         ...state.slice(0, action.meta.index),
+         ...state.slice(action.meta.index + 1)
       ];
 
     default:
-      return prevTodos;
+      return state;
   }
 }
 

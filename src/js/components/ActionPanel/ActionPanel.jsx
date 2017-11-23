@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Button from 'material-ui/Button';
 
-import { SHOW_DIALOG } from 'js/actions';
+import { SHOW } from 'js/actions';
 import './ActionPanel.css';
 
 
@@ -11,15 +11,15 @@ class ActionPanel extends Component {
 
   render() {
 
-    const { isTodoListLoading } = this.props;
+    const { isTodoListLoaderShown } = this.props;
 
-    if (!isTodoListLoading) {
+    if (!isTodoListLoaderShown) {
       return (
         <div className='ActionPanel'>
           <Button
             raised
             color='primary'
-            onClick = { () => { this.props.dispatch(SHOW_DIALOG('AddTodoDialog')) } }
+            onClick = { () => { this.props.dispatch(SHOW('AddTodoDialog')) } }
           >Add</Button>
         </div>
       );
@@ -30,7 +30,7 @@ class ActionPanel extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    isTodoListLoading: state.loader.TodoList.isLoading,
+    isTodoListLoaderShown: state.visibility.TodoListLoader
   };
 }
 

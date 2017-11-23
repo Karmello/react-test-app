@@ -7,7 +7,7 @@ import './Loader.css';
 
 export default class Loader extends Component {
   render() {
-    if (!this.props.isLoading) {
+    if (!this.props.isShown) {
       return (
         <div>{ this.props.children }</div>
       );

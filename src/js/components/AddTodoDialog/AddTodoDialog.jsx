@@ -15,7 +15,7 @@ class AddTodoDialog extends Component {
   render() {
     return (
       <Dialog
-        open = {this.props.open}
+        open = {this.props.isShown}
         transition = {Transition}
       >
         <DialogTitle>New todo</DialogTitle>

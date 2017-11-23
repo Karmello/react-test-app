@@ -11,10 +11,10 @@ class TodoList extends Component {
 
   render() {
 
-    const { isTodoListLoading } = this.props;
+    const { isTodoListLoaderShown } = this.props;
 
     return (
-      <Loader isLoading={isTodoListLoading}>
+      <Loader isShown={isTodoListLoaderShown}>
         <div className='TodoList-itemsContainer'>
           <List>{this.renderItems()}</List>
         </div>
@@ -36,7 +36,7 @@ class TodoList extends Component {
 const mapStateToProps = (state) => {
   return {
     todos: state.todos,
-    isTodoListLoading: state.loader.TodoList.isLoading
+    isTodoListLoaderShown: state.visibility.TodoListLoader
   };
 }
 

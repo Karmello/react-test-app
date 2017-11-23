@@ -6,7 +6,7 @@ import { ListItem, ListItemIcon, ListItemText, ListItemSecondaryAction } from 'm
 import DeleteIcon from 'material-ui-icons/Delete';
 
 import { editTodo, removeTodo } from 'js/api';
-import { START_LOADER, STOP_LOADER } from 'js/actions';
+import { SHOW, HIDE } from 'js/actions';
 
 
 class Todo extends Component {
@@ -33,15 +33,15 @@ class Todo extends Component {
   }
 
   onRemove = () => {
-    this.props.dispatch(START_LOADER('TodoList'));
+    this.props.dispatch(SHOW('TodoListLoader'));
     this.props.dispatch(removeTodo(this.props.index)).then(() => {
-      this.props.dispatch(STOP_LOADER('TodoList'));
+      this.props.dispatch(HIDE('TodoListLoader'));
     });
   };
 
   onStatusChange = () => {
     
-    this.props.dispatch(START_LOADER('TodoList'));
+    this.props.dispatch(SHOW('TodoListLoader'));
 
     const newTodo = {
       ...this.props.data,
@@ -49,7 +49,7 @@ class Todo extends Component {
     };
 
     this.props.dispatch(editTodo(this.props.index, newTodo)).then(() => {
-      this.props.dispatch(STOP_LOADER('TodoList'));
+      this.props.dispatch(HIDE('TodoListLoader'));
     });
   };
 };
