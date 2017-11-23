@@ -13,21 +13,19 @@ class Todo extends Component {
 
   render() {
     return (
-      <ListItem button>
+      <ListItem>
         <ListItemIcon>
           <Chip label = {this.props.index + 1} />
         </ListItemIcon>
         <ListItemText primary = { this.props.data.description } />
-        <ListItemSecondaryAction>
-          <IconButton onClick = { this.onRemove }><DeleteIcon /></IconButton>
-          <IconButton onClick = { this.onStatusChange }>
-            <Checkbox
-              checked={this.props.data.status === 1}
-              tabIndex={-1}
-              disableRipple
-            />
-          </IconButton>
-        </ListItemSecondaryAction>
+        <IconButton onClick = { this.onRemove }><DeleteIcon /></IconButton>
+        <IconButton onClick = { this.onStatusChange }>
+          <Checkbox
+            checked={this.props.data.status === 1}
+            tabIndex={-1}
+            disableRipple
+          />
+        </IconButton>
       </ListItem>
     );
   }
