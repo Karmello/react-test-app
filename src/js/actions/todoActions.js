@@ -26,3 +26,9 @@ export const REMOVE_TODO = (index) => {
     meta: { index: index }
   }
 }
+
+export const CLEAR_TODOS = () => {
+  return {
+    type: 'CLEAR_TODOS'
+  }
+}

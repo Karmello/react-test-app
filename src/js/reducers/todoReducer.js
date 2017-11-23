@@ -21,6 +21,11 @@ const todoReducer = (state = [], action) => {
          ...state.slice(action.meta.index + 1)
       ];
 
+    case 'CLEAR_TODOS':
+      return state.filter((todo) => {
+        return !todo.status;
+      });
+
     default:
       return state;
   }

@@ -1,9 +1,9 @@
-import { GET_TODOS, ADD_TODO, EDIT_TODO, REMOVE_TODO } from 'js/actions';
+import { GET_TODOS, ADD_TODO, EDIT_TODO, REMOVE_TODO, CLEAR_TODOS } from 'js/actions';
 
 
 const delay = 250;
 
-const todos = [
+let todos = [
   { description: 'Wake up', status: 1 },
   { description: 'Have breakfast', status: 1 },
   { description: 'Go to work', status: 1 },
@@ -67,3 +67,19 @@ export const removeTodo = (index) => {
     });
   }
 };
+
+export const clearTodos = () => {
+  return (dispatch) => {
+    return new Promise((resolve) => {
+
+      todos = todos.filter((todo) => {
+        return todo.status === 0;
+      });
+
+      setTimeout(() => {
+        dispatch(CLEAR_TODOS());
+        resolve();
+      }, delay);
+    });
+  }
+}

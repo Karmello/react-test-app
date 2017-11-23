@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { Checkbox, IconButton, Chip } from 'material-ui';
-import { ListItem, ListItemIcon, ListItemText, ListItemSecondaryAction } from 'material-ui/List';
+import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import DeleteIcon from 'material-ui-icons/Delete';
 
 import { editTodo, removeTodo } from 'js/api';
