@@ -7,8 +7,8 @@ import todoReducer from './todoReducer';
 
 
 const reducers = combineReducers({
-  loader: loaderReducer,
   form: formReducer,
+  loader: loaderReducer,
   dialog: dialogReducer,
   todos: todoReducer
 });

@@ -2,22 +2,24 @@ const initialState = {
   AddTodoDialog: { visible: false }
 };
 
-const dialogReducer = (prevState = initialState, action) => {
+const dialogReducer = (state = initialState, action) => {
   
-  const nextState = { ...prevState };
-
   switch (action.type) {
 
     case 'SHOW_DIALOG':
-      nextState[action.data.name].visible = true;
-      return nextState;
+      return {
+        ...state,
+        [action.data.name]: { visible: true }
+      };
 
     case 'HIDE_DIALOG':
-      nextState[action.data.name].visible = false;
-      return nextState;
+      return {
+        ...state,
+        [action.data.name]: { visible: false }
+      };
 
     default:
-      return nextState;
+      return state;
   }
 }
 

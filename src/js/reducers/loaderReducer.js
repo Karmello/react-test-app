@@ -2,22 +2,24 @@ const initialState = {
   TodoList: { isLoading: true }
 };
 
-const loaderReducer = (prevState = initialState, action) => {
+const loaderReducer = (state = initialState, action) => {
   
-  const nextState = { ...prevState };
-
   switch (action.type) {
     
     case 'START_LOADER':
-      nextState[action.data.name].isLoading = true;
-      return nextState;
+      return {
+        ...state,
+        [action.data.name]: { isLoading: true }
+      };
 
     case 'STOP_LOADER':
-      nextState[action.data.name].isLoading = false;
-      return nextState;
+      return {
+        ...state,
+        [action.data.name]: { isLoading: false }
+      };
 
     default:
-      return nextState;
+      return state;
   }
 }
 
