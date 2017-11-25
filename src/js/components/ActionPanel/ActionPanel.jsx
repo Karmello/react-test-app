@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 import Button from 'material-ui/Button';
 
-import { clearTodos } from 'js/api';
-import { SHOW, HIDE } from 'js/actions';
+import { deleteMultiple } from 'js/api';
+import { show, hide } from 'js/actions';
 import './ActionPanel.css';
 
 
@@ -26,14 +26,14 @@ class ActionPanel extends Component {
   }
 
   clearTodos = () => {
-    this.props.dispatch(SHOW('TodoListLoader'));
-    this.props.dispatch(clearTodos()).then(() => {
-      this.props.dispatch(HIDE('TodoListLoader'));
+    this.props.dispatch(show('TodoListLoader'));
+    this.props.dispatch(deleteMultiple()).then(() => {
+      this.props.dispatch(hide('TodoListLoader'));
     });
   }
 
   addTodo = () => {
-    this.props.dispatch(SHOW('AddTodoDialog'));
+    this.props.dispatch(show('AddTodoDialog'));
   }
 };
 

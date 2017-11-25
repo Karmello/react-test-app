@@ -5,8 +5,8 @@ import { Checkbox, IconButton, Chip } from 'material-ui';
 import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import DeleteIcon from 'material-ui-icons/Delete';
 
-import { editTodo, removeTodo } from 'js/api';
-import { SHOW, HIDE } from 'js/actions';
+import { putOne, deleteOne } from 'js/api';
+import { show, hide } from 'js/actions';
 
 
 class Todo extends Component {
@@ -31,23 +31,23 @@ class Todo extends Component {
   }
 
   onRemove = () => {
-    this.props.dispatch(SHOW('TodoListLoader'));
-    this.props.dispatch(removeTodo(this.props.index)).then(() => {
-      this.props.dispatch(HIDE('TodoListLoader'));
+    this.props.dispatch(show('TodoListLoader'));
+    this.props.dispatch(deleteOne(this.props.index)).then(() => {
+      this.props.dispatch(hide('TodoListLoader'));
     });
   };
 
   onStatusChange = () => {
     
-    this.props.dispatch(SHOW('TodoListLoader'));
+    this.props.dispatch(show('TodoListLoader'));
 
     const newTodo = {
       ...this.props.data,
       status: Number(!Boolean(this.props.data.status))
     };
 
-    this.props.dispatch(editTodo(this.props.index, newTodo)).then(() => {
-      this.props.dispatch(HIDE('TodoListLoader'));
+    this.props.dispatch(putOne(this.props.index, newTodo)).then(() => {
+      this.props.dispatch(hide('TodoListLoader'));
     });
   };
 };

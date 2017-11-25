@@ -4,8 +4,8 @@ import { reduxForm, Field } from 'redux-form';
 
 import Button from 'material-ui/Button';
 
-import { addTodo } from 'js/api';
-import { SHOW, HIDE } from 'js/actions';
+import { postOne } from 'js/api';
+import { show, hide } from 'js/actions';
 import './AddTodoForm.css';
 
 
@@ -35,15 +35,15 @@ class AddTodoForm extends Component {
   }
 
   onSubmit = (values) => {
-    this.props.dispatch(HIDE('AddTodoDialog'));
-    this.props.dispatch(SHOW('TodoListLoader'));
-    this.props.dispatch(addTodo({ ...values, status: 0 })).then(() => {
-      this.props.dispatch(HIDE('TodoListLoader'));
+    this.props.dispatch(hide('AddTodoDialog'));
+    this.props.dispatch(show('TodoListLoader'));
+    this.props.dispatch(postOne({ ...values, status: 0 })).then(() => {
+      this.props.dispatch(hide('TodoListLoader'));
     });
   };
 
   onCancel = () => {
-    this.props.dispatch(HIDE('AddTodoDialog'));
+    this.props.dispatch(hide('AddTodoDialog'));
   };
 };
 

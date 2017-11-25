@@ -1,18 +1,18 @@
-export const GET_TODOS = (todos) => {
+export const getTodos = (todos) => {
   return {
     type: 'GET_TODOS',
     payload: todos
   }
 }
 
-export const ADD_TODO = (todo) => {
+export const addTodo = (todo) => {
   return {
     type: 'ADD_TODO',
     payload: todo
   }
 }
 
-export const EDIT_TODO = (index, todo) => {
+export const editTodo = (index, todo) => {
   return {
     type: 'EDIT_TODO',
     meta: { index: index },
@@ -20,14 +20,14 @@ export const EDIT_TODO = (index, todo) => {
   }
 }
 
-export const REMOVE_TODO = (index) => {
+export const removeTodo = (index) => {
   return {
     type: 'REMOVE_TODO',
     meta: { index: index }
   }
 }
 
-export const CLEAR_TODOS = () => {
+export const clearTodos = () => {
   return {
     type: 'CLEAR_TODOS'
   }

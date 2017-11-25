@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { AppBar, Toolbar, Typography, IconButton } from 'material-ui';
 import RefreshIcon from 'material-ui-icons/Refresh';
 
-import { getTodos } from 'js/api';
-import { SHOW, HIDE } from 'js/actions';
+import { getAll } from 'js/api';
+import { show, hide } from 'js/actions';
 import './TopBar.css';
 
 
@@ -29,9 +29,9 @@ class TopBar extends Component {
 
   reload = () => {
     if (!this.props.isTodoListLoaderShown) {
-      this.props.dispatch(SHOW('TodoListLoader'));
-      this.props.dispatch(getTodos()).then(() => {
-        this.props.dispatch(HIDE('TodoListLoader'));
+      this.props.dispatch(show('TodoListLoader'));
+      this.props.dispatch(getAll()).then(() => {
+        this.props.dispatch(hide('TodoListLoader'));
       });
     }
   };

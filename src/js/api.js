@@ -1,4 +1,4 @@
-import { GET_TODOS, ADD_TODO, EDIT_TODO, REMOVE_TODO, CLEAR_TODOS } from 'js/actions';
+import { getTodos, addTodo, editTodo, removeTodo, clearTodos } from 'js/actions';
 
 
 const delay = 250;
@@ -14,61 +14,61 @@ let todos = [
 ];
 
 
-export const getTodos = () => {
+export const getAll = () => {
   return (dispatch) => {
     return new Promise((resolve) => {
       
       setTimeout(() => {
-        dispatch(GET_TODOS(todos));
+        dispatch(getTodos(todos));
         resolve();
       }, delay);
     });
   }
 };
 
-export const addTodo = (todo) => {
+export const postOne = (todo) => {
   return (dispatch) => {
     return new Promise((resolve) => {
       
       todos.push(todo);
       
       setTimeout(() => {
-        dispatch(ADD_TODO(todo));
+        dispatch(addTodo(todo));
         resolve();
       }, delay);
     });
   }
 };
 
-export const editTodo = (index, todo) => {
+export const putOne = (index, todo) => {
   return (dispatch) => {
     return new Promise((resolve) => {
       
       todos[index] = todo;
       
       setTimeout(() => {
-        dispatch(EDIT_TODO(index, todo));
+        dispatch(editTodo(index, todo));
         resolve();
       }, delay);
     });
   }
 };
 
-export const removeTodo = (index) => {
+export const deleteOne = (index) => {
   return (dispatch) => {
     return new Promise((resolve) => {
-      
+
       todos.splice(index, 1);
       
       setTimeout(() => {
-        dispatch(REMOVE_TODO(index));
+        dispatch(removeTodo(index));
         resolve();
       }, delay);
     });
   }
 };
 
-export const clearTodos = () => {
+export const deleteMultiple = () => {
   return (dispatch) => {
     return new Promise((resolve) => {
 
@@ -77,9 +77,9 @@ export const clearTodos = () => {
       });
 
       setTimeout(() => {
-        dispatch(CLEAR_TODOS());
+        dispatch(clearTodos());
         resolve();
       }, delay);
     });
   }
-}
+};

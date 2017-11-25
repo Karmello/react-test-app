@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getTodos } from 'js/api';
-import { HIDE } from 'js/actions';
+import { getAll } from 'js/api';
+import { hide } from 'js/actions';
 import { TopBar, TodoList, ActionPanel, AddTodoDialog } from 'js/components';
 import './App.css';
 
@@ -10,8 +10,8 @@ import './App.css';
 class App extends Component {
 
   componentDidMount() {
-    this.props.dispatch(getTodos()).then(() => {
-      this.props.dispatch(HIDE('TodoListLoader'));
+    this.props.dispatch(getAll()).then(() => {
+      this.props.dispatch(hide('TodoListLoader'));
     });
   }
 
