@@ -18,21 +18,18 @@ class TodoDialog extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    
-    if (nextProps.todos.activeTodoIndex !== this.props.todos.activeTodoIndex) {
 
-      if (nextProps.todos.activeTodoIndex !== null) {
-        this.setState({
-          title: `Editing todo ${nextProps.todos.activeTodoIndex + 1}`,
-          initialValues: { description: nextProps.todos.data[nextProps.todos.activeTodoIndex].description }
-        });
+    if (nextProps.todos.activeTodoIndex !== null) {
+      this.setState({
+        title: `Editing todo ${nextProps.todos.activeTodoIndex + 1}`,
+        initialValues: { description: nextProps.todos.data[nextProps.todos.activeTodoIndex].description }
+      });
 
-      } else {
-        this.setState({
-          title: `New todo ${nextProps.todos.data.length + 1}`,
-          initialValues: null
-        });
-      }
+    } else {
+      this.setState({
+        title: `New todo ${nextProps.todos.data.length + 1}`,
+        initialValues: null
+      });
     }
   }
 
