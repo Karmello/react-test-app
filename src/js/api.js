@@ -19,7 +19,7 @@ export const getAll = () => {
     return new Promise((resolve) => {
       
       setTimeout(() => {
-        dispatch(getTodos(todos));
+        dispatch(getTodos([...todos]));
         resolve();
       }, delay);
     });

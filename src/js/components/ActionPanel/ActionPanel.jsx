@@ -33,7 +33,7 @@ class ActionPanel extends Component {
   }
 
   addTodo = () => {
-    this.props.dispatch(show('AddTodoDialog'));
+    this.props.dispatch(show('TodoDialog'));
   }
 };
 

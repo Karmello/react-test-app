@@ -1,6 +1,6 @@
 const initialState = {
   TodoListLoader: true,
-  AddTodoDialog: false
+  TodoDialog: false
 };
 
 const visibilityReducer = (state = initialState, action) => {

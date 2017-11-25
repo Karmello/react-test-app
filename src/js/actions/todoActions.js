@@ -32,3 +32,10 @@ export const clearTodos = () => {
     type: 'CLEAR_TODOS'
   }
 }
+
+export const setActiveTodo = (index) => {
+  return {
+    type: 'SET_ACTIVE_TODO',
+    meta: { index: index }
+  }
+}

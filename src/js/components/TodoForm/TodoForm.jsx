@@ -4,12 +4,12 @@ import { reduxForm, Field } from 'redux-form';
 
 import Button from 'material-ui/Button';
 
-import { postOne } from 'js/api';
+import { postOne, putOne } from 'js/api';
 import { show, hide } from 'js/actions';
-import './AddTodoForm.css';
+import './TodoForm.css';
 
 
-class AddTodoForm extends Component {
+class TodoForm extends Component {
 
   render() {
 
@@ -19,14 +19,14 @@ class AddTodoForm extends Component {
       <form onSubmit = { handleSubmit(this.onSubmit) }>
         <div>
           <Field
-            className='AddTodoForm-description'
+            className='TodoForm-description'
             component='textarea'
             name='description'
             placeholder='Description'
           />
         </div>
         <br />
-        <div className='AddTodoForm-btnsContainer'>
+        <div className='TodoForm-btnsContainer'>
           <Button raised color='default' type='button' onClick = { this.onCancel }>Cancel</Button>
           <Button raised color='primary' type='submit'>Submit</Button>
         </div>
@@ -35,20 +35,31 @@ class AddTodoForm extends Component {
   }
 
   onSubmit = (values) => {
-    this.props.dispatch(hide('AddTodoDialog'));
+    
+    const cb = () => { this.props.dispatch(hide('TodoListLoader')); }
+
+    this.props.dispatch(hide('TodoDialog'));
     this.props.dispatch(show('TodoListLoader'));
-    this.props.dispatch(postOne({ ...values, status: 0 })).then(() => {
-      this.props.dispatch(hide('TodoListLoader'));
-    });
+    
+    if (this.props.activeTodoIndex !== null) {
+      this.props.dispatch(putOne(this.props.activeTodoIndex, { ...values })).then(cb);
+
+    } else {
+      this.props.dispatch(postOne({ ...values, status: 0 })).then(cb);
+    }
   };
 
   onCancel = () => {
-    this.props.dispatch(hide('AddTodoDialog'));
+    this.props.dispatch(hide('TodoDialog'));
   };
 };
 
-const mapStateToProps = (state) => { return state; };
+const mapStateToProps = (state) => {
+  return {
+    activeTodoIndex: state.todos.activeTodoIndex
+  };
+};
 
-AddTodoForm = connect(mapStateToProps)(AddTodoForm);
+TodoForm = connect(mapStateToProps)(TodoForm);
 
-export default reduxForm({ form: 'AddTodoForm' })(AddTodoForm);
+export default reduxForm({ form: 'TodoForm' })(TodoForm);

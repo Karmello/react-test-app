@@ -35,7 +35,7 @@ class TodoList extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    todos: state.todos,
+    todos: state.todos.data,
     isTodoListLoaderShown: state.visibility.TodoListLoader
   };
 }

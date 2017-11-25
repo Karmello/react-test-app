@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { getAll } from 'js/api';
 import { hide } from 'js/actions';
-import { TopBar, TodoList, ActionPanel, AddTodoDialog } from 'js/components';
+import { TopBar, TodoList, ActionPanel, TodoDialog } from 'js/components';
 import './App.css';
 
 
@@ -17,7 +17,7 @@ class App extends Component {
 
   render() {
 
-    const { isAddToDoDialogShown } = this.props;
+    const { isToDoDialogShown } = this.props;
 
     return (
       <div className='App'>
@@ -26,7 +26,7 @@ class App extends Component {
         <TodoList/>
         <br/>
         <ActionPanel/>
-        <AddTodoDialog isShown = {isAddToDoDialogShown} />
+        <TodoDialog isShown = {isToDoDialogShown} />
       </div>
     );
   }
@@ -34,7 +34,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    isAddToDoDialogShown: state.visibility.AddTodoDialog
+    isToDoDialogShown: state.visibility.TodoDialog
   }
 }
 
