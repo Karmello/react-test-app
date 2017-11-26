@@ -11,15 +11,6 @@
 			"path": "src\\js"
 		},
 		{
-			"path": "src\\js\\containers"
-		},
-		{
-			"path": "src\\js\\actions"
-		},
-		{
-			"path": "src\\js\\reducers"
-		},
-		{
 			"path": "src\\js\\components"
 		}
 	]
