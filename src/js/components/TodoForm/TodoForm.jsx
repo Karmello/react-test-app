@@ -37,15 +37,20 @@ class TodoForm extends Component {
   onSubmit = (values) => {
     
     const cb = () => { this.props.dispatch(hide('TodoListLoader')); }
+    
+    const index = this.props.todos.activeTodoIndex;
+    const body = { ...values };
 
     this.props.dispatch(hide('TodoDialog'));
     this.props.dispatch(show('TodoListLoader'));
     
-    if (this.props.activeTodoIndex !== null) {
-      this.props.dispatch(putOne(this.props.activeTodoIndex, { ...values })).then(cb);
+    if (index !== null) {
+      body.status = this.props.todos.data[index].status;
+      this.props.dispatch(putOne(index, body)).then(cb);
 
     } else {
-      this.props.dispatch(postOne({ ...values, status: 0 })).then(cb);
+      body.status = 0;
+      this.props.dispatch(postOne(body)).then(cb);
     }
   };
 
@@ -55,9 +60,7 @@ class TodoForm extends Component {
 };
 
 const mapStateToProps = (state) => {
-  return {
-    activeTodoIndex: state.todos.activeTodoIndex
-  };
+  return { todos: state.todos };
 };
 
 TodoForm = connect(mapStateToProps)(TodoForm);
