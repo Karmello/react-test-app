@@ -5,13 +5,25 @@
 			"path": "."
 		},
 		{
+			"path": "config"
+		},
+		{
+			"path": "build"
+		},
+		{
 			"path": "src"
 		},
 		{
 			"path": "src\\js"
 		},
 		{
+			"path": "src\\js\\containers"
+		},
+		{
 			"path": "src\\js\\components"
+		},
+		{
+			"path": "src\\__tests__"
 		}
 	]
 }
