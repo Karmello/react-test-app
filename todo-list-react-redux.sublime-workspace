@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"proto",
+				"prototype"
+			],
+			[
+				"construc",
+				"constructor"
+			],
+			[
 				"acti",
 				"activeTodoIndex\t(TodoDialog.jsx)"
 			],
@@ -399,6 +407,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/js/components/TodoList/TodoList.jsx",
+			"settings":
+			{
+				"buffer_size": 922,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/js/components/ActionPanel/ActionPanel.jsx",
+			"settings":
+			{
+				"buffer_size": 1073,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -407,17 +431,17 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 435.0,
-		"last_filter": "remove",
+		"height": 305.0,
+		"last_filter": "install",
 		"selected_items":
 		[
 			[
-				"remove",
-				"Package Control: Remove Package"
-			],
-			[
 				"install",
 				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
 			],
 			[
 				"conemu",
@@ -468,7 +492,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 774.0
+		"width": 668.0
 	},
 	"console":
 	{
@@ -488,14 +512,59 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Workspace/todo-list-react-redux/src/js/components"
+		"/C/Workspace/todo-list-react-redux/src/js/components",
+		"/C/Workspace/todo-list-react-redux/src/js/components/ActionPanel",
+		"/C/Workspace/todo-list-react-redux/src/js/components/TodoList"
 	],
 	"file_history":
 	[
+		"/C/Workspace/todo-list-react-redux/src/js/components/TodoList/TodoList.jsx",
+		"/C/Workspace/todo-list-react-redux/src/js/components/Loader/Loader.jsx",
+		"/C/Workspace/todo-list-react-redux/src/js/components/ActionPanel/ActionPanel.jsx",
+		"/C/Workspace/todo-list-react-redux/src/js/containers/App/App.jsx",
+		"/C/Workspace/todo-list-react-redux/src/index.js",
+		"/C/Workspace/todo-list-react-redux/src/setupTests.js",
+		"/C/Workspace/todo-list-react-redux/src/index.css",
+		"/C/Workspace/todo-list-react-redux/src/__tests__/test1.spec.jsx",
+		"/C/Workspace/todo-list-react-redux/src/js/components/TopBar/TopBar.jsx",
+		"/C/Workspace/todo-list-react-redux/src/js/components/index.js",
+		"/C/Workspace/todo-list-react-redux/config/webpack.config.dev.js",
+		"/C/Workspace/todo-list-react-redux/src/js/components/TodoForm/TodoForm.jsx",
+		"/C/Workspace/todo-list-react-redux/src/js/components/TodoForm/TodoForm.css",
+		"/C/Workspace/todo-list-react-redux/src/js/actions/todoActions.js",
+		"/C/Workspace/todo-list-react-redux/src/js/actions/index.js",
+		"/C/Workspace/todo-list-react-redux/src/js/components/Todo/Todo.jsx",
+		"/C/Workspace/todo-list-react-redux/src/js/api.js",
+		"/C/Workspace/todo-list-react-redux/src/js/store.js",
+		"/C/Workspace/todo-list-react-redux/node_modules/material-ui/List/index.js",
+		"/C/Workspace/todo-list-react-redux/src/js/components/TodoList/TodoList.css",
+		"/C/Workspace/todo-list-react-redux/src/js/components/TopBar/TopBar.css",
+		"/C/Workspace/todo-list-react-redux/src/js/components/TopBar/TopBar.scss",
+		"/C/Workspace/todo-list-react-redux/node_modules/material-ui-icons/Refresh.js",
+		"/C/Workspace/todo-list-react-redux/node_modules/material-ui/index.js",
+		"/C/Workspace/todo-list-react-redux/src/js/components/TodoDialog/TodoDialog.jsx",
+		"/C/Workspace/todo-list-react-redux/src/__tests__/test2.spec.jsx",
 		"/C/Workspace/todo-list-react-redux/package.json",
+		"/C/Workspace/todo-list-react-redux/src/__tests__/test1.spec.js",
+		"/C/Workspace/todo-list-react-redux/config/setupTests.js",
+		"/C/Workspace/todo-list-react-redux/config/polyfills.js",
+		"/C/Workspace/todo-list-react-redux/build/static/js/main.044d9fae.js",
+		"/C/Workspace/todo-list-react-redux/build/static/js/main.044d9fae.js.map",
+		"/C/Workspace/todo-list-react-redux/build/static/css/main.3e5421dd.css",
+		"/C/Workspace/todo-list-react-redux/build/static/css/main.3e5421dd.css.map",
+		"/C/Workspace/todo-list-react-redux/build/asset-manifest.json",
+		"/C/Workspace/todo-list-react-redux/build/favicon.ico",
+		"/C/Workspace/todo-list-react-redux/build/service-worker.js",
+		"/C/Workspace/todo-list-react-redux/build/manifest.json",
+		"/C/Workspace/todo-list-react-redux/build/index.html",
+		"/C/Workspace/todo-list-react-redux/config/webpack.config.prod.js",
+		"/C/Workspace/todo-list-react-redux/config/webpackDevServer.config.js",
+		"/C/Workspace/todo-list-react-redux/config/paths.js",
+		"/C/Workspace/todo-list-react-redux/src/js/actions/visibilityActions.js",
+		"/C/Workspace/todo-list-react-redux/public/index.html",
+		"/C/Workspace/todo-list-react-redux/config/jest/cssTransform.js",
 		"/C/Workspace/todo-list-react-redux/todo-list-react-redux.sublime-workspace",
 		"/C/Workspace/todo-list-react-redux/todo-list-react-redux.sublime-project",
-		"/C/Workspace/todo-list-react-redux/src/js/components/Todo/Todo.jsx",
 		"/C/Workspace/react-test-app/src/js/components/Todo/Todo.jsx",
 		"/C/Workspace/react-test-app/src/js/components/index.js",
 		"/C/Workspace/react-test-app/src/js/reducers/todoReducer.js",
@@ -576,54 +645,11 @@
 		"/C/Users/noka/AppData/Roaming/Sublime Text 3/Packages/Color Highlighter/ColorHighlighter.sublime-settings",
 		"/C/Workspace/CarGarantie/cgbs-claims/sources/claims-web-entry/.stylelintrc",
 		"/C/Workspace/CarGarantie/cgbs-claims/sources/claims-web-entry/.babelrc",
-		"/C/Workspace/CarGarantie/cgbs-claims/sources/claims-web-entry/.editorconfig",
-		"/C/Users/noka/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
-		"/C/Workspace/CarGarantie/cgbs-claims/sources/claims-web-entry/.eslintrc",
-		"/C/Workspace/CarGarantie/cgbs-claims/sources/claims-web-entry/README.md",
-		"/C/Workspace/CarGarantie/cgbs-claims/sources/claims-web-entry/run-nginx.sh",
-		"/C/Workspace/CarGarantie/cgbs-claims/sources/claims-web-entry/webpack.prod.config.js",
-		"/C/Workspace/ng-app-container/dev/app/services/apiService.js",
-		"/C/Workspace/ng-app-container/dev/app/content/page.start/start.html",
-		"/C/Workspace/ng-app-container/dev/app/content/page.start/StartController.js",
-		"/C/Workspace/ng-app-container/dev/app/services/ui.js",
-		"/C/Workspace/ng-app-container/dev/app/components/reports/reports.html",
-		"/C/Workspace/ng-app-container/dev/app/components/reports/reports.js",
-		"/C/Workspace/ng-app-container/dev/app/components/reports/reportsService.js",
-		"/C/Workspace/ng-app-container/dev/app/components/myApiCollection/myApiCollection.js",
-		"/C/Workspace/ng-app-container/dev/app/components/myApiCollection/myApiCollection.html",
-		"/C/Workspace/ng-app-container/dev/app/components/myApiCollection/myApiCollection.scss",
-		"/C/Workspace/ng-app-container/dev/app/run.js",
-		"/C/Workspace/ng-app-container/dev/app/content/page.start/start.route.js",
-		"/C/Workspace/ng-app-container/dev/app/my-widgets/modal/my-functional-modal/myFunctionalModal.js",
-		"/C/Workspace/ng-app-container/dev/app/my-widgets/collection/my-collection-browser/MyCollectionBrowser.class.js",
-		"/C/Workspace/ng-app-container/dev/app/content/page.main/home.page/home.html",
-		"/C/Workspace/ng-app-container/dev/app/content/page.main/profile.page/profile.html",
-		"/C/Workspace/ng-app-container/dev/app/content/page.main/search.page/search.html",
-		"/C/Workspace/ng-app-container/dev/app/my-widgets/collection/MyCollectionSelector.class.js",
-		"/C/Workspace/ng-app-container/dev/app/components/myFrame/myFrame.js",
-		"/C/Workspace/ng-app-container/dev/app/components/reports/reports.scss",
-		"/C/Workspace/ng-app-container/dev/app/my-widgets/collection/my-collection-browser/myCollectionBrowser.js",
-		"/C/Workspace/ng-app-container/dev/app/components/forms/registerForm/registerForm.html",
-		"/C/Workspace/ng-app-container/dev/app/content/app.route.js",
-		"/C/Workspace/ng-app-container/dev/app/content/page.main/about.page/about.html",
-		"/C/Workspace/ng-app-container/dev/app/content/page.main/main.html",
-		"/C/Workspace/ng-app-container/dev/app/content/page.start/startTabs.conf.js",
-		"/C/Workspace/ng-app-container/dev/app/content/page.start/start.scss",
-		"/C/Workspace/ng-app-container/dev/app/content/index.html",
-		"/C/Workspace/ng-app-container/dev/app/components/myFrame/myFrame.html",
-		"/C/Workspace/ng-app-container/dev/app/components/forms/appearanceForm/appearanceForm.js",
-		"/C/Workspace/ng-app-container/dev/app/components/forms/appearanceForm/appearanceForm.html",
-		"/C/Workspace/ng-app-container/dev/app/components/appStats/appStats.html",
-		"/C/Workspace/ng-app-container/dev/app/components/_root/root.html",
-		"/C/Workspace/ng-app-container/dev/app/content/AppController.js",
-		"/C/Workspace/ng-app-container/dev/app/content/page.main/MainController.js",
-		"/C/Workspace/ng-app-container/dev/app/content/page.main/mainFrame.conf.js",
-		"/C/Workspace/ng-app-container/dev/app/content/appFrame.conf.js",
-		"/C/Workspace/ng-app-container/dev/public/templates/myFrame.html"
+		"/C/Workspace/CarGarantie/cgbs-claims/sources/claims-web-entry/.editorconfig"
 	],
 	"find":
 	{
-		"height": 29.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -640,6 +666,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"react-scripts",
+			"scripts",
+			"appSrc",
+			"src",
+			"paths",
+			"appSrc",
+			"src",
+			"js/store",
 			"getTodos",
 			"x",
 			"todos.props",
@@ -733,14 +767,401 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/js/components/TodoList/TodoList.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 922,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								191,
+								191
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										722,
+										723
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										513,
+										514
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/js/components/ActionPanel/ActionPanel.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1073,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								426,
+								426
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										610,
+										611
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"region.yellowish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										387,
+										388
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 29.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -781,7 +1202,7 @@
 	"project": "todo-list-react-redux.sublime-project",
 	"replace":
 	{
-		"height": 53.0
+		"height": 63.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -790,6 +1211,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"packa",
+				"todo-list-react-redux\\package.json"
+			],
 			[
 				"pack",
 				"todo-list-react-redux\\package.json"
@@ -809,10 +1234,6 @@
 			[
 				"app.js",
 				"containers\\App\\App.jsx"
-			],
-			[
-				"packa",
-				"react-test-app\\package.json"
 			],
 			[
 				"store",
@@ -1023,7 +1444,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 305.0,
+	"side_bar_width": 384.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -11,6 +11,9 @@
 			"path": "build"
 		},
 		{
+			"path": "src\\__tests__"
+		},
+		{
 			"path": "src"
 		},
 		{
@@ -21,9 +24,6 @@
 		},
 		{
 			"path": "src\\js\\components"
-		},
-		{
-			"path": "src\\__tests__"
 		}
 	]
 }
